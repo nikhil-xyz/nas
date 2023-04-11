@@ -49,6 +49,6 @@ interface = gr.Interface(fn=process,
                 title = title,
                 inputs=gr.inputs.Textbox(lines=20, placeholder='Insert the News Article'),
                 outputs='text')
-interface.launch(server_port=7860, share=True)
+interface.launch(server_name="0.0.0.0", server_port=7860)
 
 

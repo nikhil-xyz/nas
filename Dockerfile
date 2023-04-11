@@ -1,6 +1,6 @@
 FROM python:3.7
-COPY . /app
+
+COPY . /app/
+RUN pip install -r /app/requirements.txt
 WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE $PORT
-CMD uvicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+CMD ["python", "app.py"]
