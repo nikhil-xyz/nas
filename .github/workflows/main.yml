@@ -14,7 +14,12 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-          run: lfs track "*.pkl"
+      - name: lfs install
+        run: git lfs install
+      - name: track lfs
+        run: git lfs track "*.pkl"
+      - name: checkout
+        run: git lfs checkout
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.NAS_TOKEN }}
